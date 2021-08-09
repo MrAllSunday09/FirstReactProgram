@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import './hello.css';
 import reportWebVitals from './reportWebVitals';
 
+var courseNames = ['React', 'Angular', 'JavaScript']
+function generateJSX()
+{
+  return courseNames.map((course, index) => <li key={index}>{course}</li>)
+}
+const element = <ol>{generateJSX()}</ol>
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    element,
   document.getElementById('root')
 );
 
